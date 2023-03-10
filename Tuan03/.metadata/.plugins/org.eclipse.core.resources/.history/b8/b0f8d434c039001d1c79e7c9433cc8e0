@@ -1,0 +1,89 @@
+package bai05;
+public class TamGiac {
+	private int ma;
+	private int mb;
+	private int mc;
+
+	/*
+	 * Nếu ma, mb, mc là các số âm hoặc không tạo thành tam giác thì gán cả 3 thuộc
+	 * tính bằng 0
+	 */
+	public TamGiac(int ma, int mb, int mc) {
+		if (ma <= 0 || mb <= 0 || mc <= 0 || ma + mb <= mc || ma + mc <= mb || mb + mc <= ma) {
+			this.ma = 0;
+			this.mb = 0;
+			this.mc = 0;
+		} else
+			this.ma = ma;
+		this.mb = mb;
+		this.mc = mc;
+	}
+
+	/*
+	 * Neu la tam giac thi xuat true
+	 */
+	private boolean laTamGiac(double a, double b, double c) {
+		if (a + b <= c || a + c <= b || b + c <= a)
+			return false;
+		else
+			return true;
+	}
+
+	public int getMa() {
+		return ma;
+	}
+
+	public void setMa(int ma) {
+		if (ma <= 0 || laTamGiac(ma, mb, mc))
+			;
+		else
+			this.ma = ma;
+	}
+
+	public int getMb() {
+		return mb;
+	}
+
+	public void setMb(int mb) {
+		if (mb <= 0 || laTamGiac(ma, mb, mc))
+			;
+		else
+			this.mb = mb;
+	}
+
+	public int getMc() {
+		return mc;
+	}
+
+	public void setMc(int mc) {
+		if (mc <= 0 || laTamGiac(ma, mb, mc))
+			;
+		else
+			this.mc = mc;
+	}
+
+	public double tinhChuVi() {
+		return ma + mb + mc;
+	}
+
+	public double tinhDienTich() {
+		double p = (ma + mb + mc) / 2;
+		return Math.sqrt(p * (p - ma) * (p - mb) * (p - mc));
+	}
+
+
+	  public String kiemTraTamGiac() { if (ma == mb&& mb == mc&&ma==mc)
+	  System.out.println("Tam giac deu"); else if (ma == mb || ma == mc || mb ==
+	  mc) System.out.println("Tam giac can"); else if (ma + mb > mc || ma + mc > mb
+	  || mb + mc > ma) System.out.println("Tam giac thuong"); else
+	  System.out.println("Khong phai tam giac");
+	return ;
+	  
+	  }
+
+	@Override
+	public String toString() {
+		return String.format("%s \t%s \t%s \t%.2f \t%.2f", ma, mb, mc, tinhChuVi(), tinhDienTich());
+	}
+
+}

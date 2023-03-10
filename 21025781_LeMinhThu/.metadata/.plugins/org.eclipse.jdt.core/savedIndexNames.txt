@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+T:\LTHDT\21025781_LeMinhThu\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2921994422.index
+2060265928.index

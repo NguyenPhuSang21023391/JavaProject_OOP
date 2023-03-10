@@ -1,0 +1,141 @@
+package bai11;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
+public class SoTietKiem 
+{
+	private String MaSo;
+	private LocalDate NgayMoSo;
+	private double SoTienGoi;
+	private int KyHan;
+	private float LaiSuat;
+	/**
+	 * @return the maSo
+	 */
+	public String getMaSo() 
+	{
+		return maSo;
+	}
+
+	/**
+	 * @param maSo the maSo to set
+	 */
+	public void setMaSo(String maSo)
+	{
+		if(maSo.trim().equals(""))
+			System.out.println("Mã số không được rỗng");
+		else
+			this.maSo = maSo;
+	}
+
+	/**
+	 * @return the ngayMbSo
+	 */
+	public LocalDate getNgayMoSo() {
+		return ngayMoSo;
+	}
+
+	/**
+	 * @param ngayMbSo the ngayMbSo to set
+	 */
+	public void setNgayMoSo(LocalDate ngayMbSo) 
+	{
+		this.ngayMoSo = ngayMbSo;
+	}
+
+	/**
+	 * @return the soTienGoi
+	 */
+	public double getSoTienGoi() 
+	{
+		return SoTienGoi;
+	}
+
+	/**
+	 * @param soTienGoi the soTienGoi to set
+	 */
+	public void setSoTienGoi(double soTienGoi)
+	{
+		if(soTienGoi<0)
+			System.out.println("Số tiền gởi không được âm");
+		else
+			this.SoTienGoi = soTienGoi;
+	}
+
+	/**
+	 * @return the kyHan
+	 */
+	public int getKyHan() {
+		return kyHan;
+	}
+
+	/**
+	 * @param kyHan the kyHan to set
+	 */
+	public void setKyHan(int kyHan) 
+	{
+		if(kyHan<0)
+			System.out.println("Kỳ hạn không được âm");
+		else
+			this.kyHan = kyHan;
+	}
+
+	/**
+	 * @return the laiSuat
+	 */
+	public float getLaiSuat() {
+		return laiSuat;
+	}
+
+	/**
+	 * @param laiSuat the laiSuat to set
+	 */
+	public void setLaiSuat(float laiSuat) 
+	{
+		if(laiSuat<0)
+			System.out.println("Lãi suất không được âm");
+		else
+			this.laiSuat = laiSuat;
+	}
+
+	private String maSo;
+	private LocalDate ngayMoSo;
+	private double soTienGoi;
+	private int kyHan;
+	private float laiSuat;
+	public SoTietKiem(String maSo, LocalDate ngayMoSo,double soTienGoi,int kyHan,float laiSuat)
+	{
+		setMaSo(maSo);
+		setNgayMoSo(ngayMoSo);
+		setSoTienGoi(soTienGoi);
+		setKyHan(kyHan);
+		setLaiSuat(laiSuat);
+	}
+	
+	public int tinhSoThangGoiThuc()
+	{
+		Period age= Period.between(ngayMoSo,LocalDate.now());
+		int dt_nam=age.getYears();//số năm chênh lệch
+		int dt_thang=age.getMonths();//số tháng chênh lệch
+		int soThangGoi=dt_nam*12+dt_thang;
+		if(soThangGoi % kyHan==0)
+			return soThangGoi;
+		else
+			return soThangGoi/kyHan*kyHan;
+		
+	}
+	public double tinhTienLai()
+	{
+		return Math.pow(1+laiSuat,tinhSoThangGoiThuc())*SoTienGoi-SoTienGoi;
+	}
+	public String toString()
+	{
+		LocalDate today=LocalDate.now();
+		DateTimeFormatter dtf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String ngay=dtf.format(ngayMoSo);
+		String now=dtf.format(today);
+		return String.format("STK %s[%s-%s]KH %d tháng, số tháng tính lãi: %d, ls %f,số tiền:%lf --> Tiền lãi: %lf\n",maSo,ngay,now,kyHan,tinhSoThangGoiThuc(),laiSuat,SoTienGoi,tinhTienLai());
+	}
+}

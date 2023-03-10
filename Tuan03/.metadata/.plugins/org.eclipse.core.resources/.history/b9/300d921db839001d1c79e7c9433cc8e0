@@ -1,0 +1,21 @@
+package bai07;
+
+import bai05.TamGiac;
+
+public class Test {
+
+	public static void main(String[] args) {
+		TamGiac H1 = new TamGiac(3, 5, 6);
+		TamGiac H2 = new TamGiac(5, 4, 7);
+		TamGiac H3 = new TamGiac(3, 4, 5);
+		TamGiac H4 = new TamGiac(5, 7, 4);
+		TamGiac H5 = new TamGiac(4, 7, 4);
+		System.out.printf("a\tb\tc\tCHU VI\tDIEN TICH\n");
+		System.out.println(H1);
+		System.out.println(H2);
+		System.out.println(H3);
+		System.out.println(H4);
+		System.out.println(H5);
+	}
+
+}

@@ -1,0 +1,15 @@
+package bai05;
+
+public class Test {
+
+	public static void main(String[] args) {
+		TamGiac a= new TamGiac(2, 2, 3);
+		TamGiac b=new TamGiac(1, 3, 6);
+		TamGiac c=new TamGiac(4, 5, 4);
+		TamGiac d=new TamGiac(3, 3, 3);
+		TamGiac e=new TamGiac(7, 8, 9);
+		System.out.println("Chu vi can tim la: "+a.tinhChuVi());
+
+	}
+
+}

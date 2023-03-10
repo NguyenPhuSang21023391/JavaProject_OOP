@@ -1,0 +1,82 @@
+package bai04;
+
+public class DiemSinhVien {
+	private int maSV;
+	private String hoTen;
+	private float diemLT;
+	private float diemTH;
+
+	public int getMaSV() {
+		return maSV;
+	}
+
+	/*
+	 * Ma sv (so nguyen>0), maSV>0
+	 */
+	public void setMaSV(int maSV) {
+		if (maSV > 0)
+			this.maSV = maSV;
+		else {
+			this.maSV = 11111111;
+		}
+	}
+
+	public String getHoTen() {
+		return hoTen;
+	}
+
+	public void setHoTen(String hoTen) {
+		if (hoTen.trim().equals(""))
+			this.hoTen = hoTen;
+		else {
+			this.hoTen = hoTen;
+		}
+	}
+
+	public float getDiemLT() {
+		return diemLT;
+	}
+
+	public void setDiemLT(float diemLT) {
+		if (diemLT < 0 && diemTH > 10)
+			this.diemLT = 0;
+		else {
+			this.diemLT = diemLT;
+		}
+	}
+
+	public float getDiemTH() {
+		return diemTH;
+	}
+
+	public void setDiemTH(float diemTH) {
+		if (diemTH < 0 && diemTH > 10)
+			this.diemTH = 0;
+		else {
+			this.diemTH = diemTH;
+		}
+	}
+
+	public DiemSinhVien(int maSV, String hoTen, float diemLT, float diemTH) {
+		this.maSV = maSV;
+		this.hoTen = hoTen;
+		this.diemLT = diemLT;
+		this.diemTH = diemTH;
+	}
+
+	public DiemSinhVien() {
+		this(0, "", 0.0f, 0.0f);
+	}
+
+	public float tinhDiemTrungBinh() {
+		return (this.diemLT + this.diemTH) / 2;
+	}
+
+	public static String getTieuDe() {
+		return String.format("%-5s %-20s %10s %10s %10s", "maSV", "Ho Ten", " Diem LT", "Diem TH");
+	}
+
+	public String toString() {
+		return String.format("%-5s %-20s %10.2f %10.2f %10.2f", maSV, hoTen, diemLT, diemTH, tinhDiemTrungBinh());
+	}
+}

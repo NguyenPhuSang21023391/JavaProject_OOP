@@ -1,0 +1,61 @@
+package bai05;
+
+public class TamGiac {
+	private double mA, mB, mC;
+	private double a;
+
+	public TamGiac(double mA, double mB, double mC) {
+		if ((mA <= 0 || mB <= 0 || mC <= 0)) {
+			this.mA = mA;
+			this.mB = mB;
+			this.mC = mC;
+		} else {
+			setmA(mA);
+			setmB(mB);
+			setmC(mC);
+		}
+	}
+
+	public TamGiac() {
+		mA = 0;
+		mB = 0;
+		mC = 0;
+	}
+
+	public double getmA() {
+		return mA;
+	}
+
+	public void setmA(double mA) {
+		if(a<=0|| laTamGiac(a,mB,mC))
+			;
+		else
+		this.mA = a;
+	}
+
+	public double getmB() {
+		return mB;
+	}
+
+	public void setmB(double mB) {
+		this.mB = mB;
+	}
+
+	public double getmC() {
+		return mC;
+	}
+
+	public void setmC(double mC) {
+		this.mC = mC;
+	}
+	private boolean laTamGiac(double a,double b, double c) {
+		if(a+b<=c||c+b<=a||a+c<=b)
+			return false;
+		else return true;
+	}
+	@Override
+	public String toString() {
+		return "TamGiac [mA=" + mA + ", mB=" + mB + ", mC=" + mC + "]";
+	}
+
+}

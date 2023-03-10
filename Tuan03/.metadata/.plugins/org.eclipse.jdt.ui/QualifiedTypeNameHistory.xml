@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="bai01.ToaDo"/>
+    <fullyQualifiedTypeName name="bai02.Point"/>
+    <fullyQualifiedTypeName name="bai03.Cylinder"/>
+    <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="bai04.DiemSinhVien"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="bai08.Account"/>
+    <fullyQualifiedTypeName name="bai11.KhachHang"/>
+    <fullyQualifiedTypeName name="bai11.SoTietKiem"/>
+    <fullyQualifiedTypeName name="bai07.HangThucPham"/>
+    <fullyQualifiedTypeName name="bai05.TamGiac"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="bai06.ThongTinDangKiXe"/>
+</qualifiedTypeNameHistroy>

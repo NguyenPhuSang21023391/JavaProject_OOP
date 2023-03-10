@@ -1,0 +1,49 @@
+package bai04;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		/*
+		 * sv1 chua thong tin cua chinh minh(tao bang constructor 
+		 * du thong so, thong tin biet roi nen khong yc nhap)
+		 */
+		DiemSinhVien sv1=new DiemSinhVien(1111, "nguyen thanh an", 6.50f, 8.50f);
+		/*
+		 * sv2 la thong tinmot nguoi ban cua ban( tao bang constructor mac dinh,
+		 * thong tin cung biet roi khong yeu cau nhap).
+		 */
+		DiemSinhVien sv2=new DiemSinhVien();
+		sv2.setMaSV(002);
+		sv2.setHoTen("Thao Nhi");
+		sv2.setDiemLT(9.5f);
+		sv2.setDiemTH(9.5f);
+		/*
+		 * sv3 tao bang cach yeu cau nhap lan luot tung thong tin 
+		 * cua sv roi gan vao sv3
+		 */
+		DiemSinhVien sv3;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Nhap ms cua sv3:");
+		int maSV=sc.nextInt();
+		
+		System.out.println("Nhap ho va ten cho sv3:");
+		sc.nextLine();
+		String hoTen=sc.nextLine();
+		
+		System.out.println("Nhap diem LT cho sv3: ");
+		float diemLT=sc.nextFloat();
+		
+		System.out.println("Nhap diem TH cho sv3: ");
+		float diemTH=sc.nextFloat();
+		sc.close();
+		
+		sv3 = new DiemSinhVien(maSV, hoTen, diemLT, diemTH);
+		
+		System.out.println(DiemSinhVien.getTieuDe());
+		System.out.println(sv1);
+		System.out.println(sv2);
+		System.out.println(sv3);				
+}
+}

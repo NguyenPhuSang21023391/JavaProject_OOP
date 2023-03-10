@@ -1,0 +1,39 @@
+package bai03;
+
+public class Cylinder {
+	pivate float h,r;
+
+	public Cylinder(float h, float r) {
+		this.h = h;
+		this.r = r;
+	}
+
+	public Cylinder() {
+		h=0;
+		r=0;
+	}
+
+	public float getH() {
+		return h;
+	}
+
+	public void setH(float h) {
+		this.h = h;
+	}
+
+	public float getR() {
+		return r;
+	}
+
+	public void setR(float r) {
+		this.r = r;
+	}
+	public 
+	@Override
+	public String toString() {
+		return "Cylinder [h=" + h + ", r=" + r + "]";
+	}
+	
+	
+	
+}

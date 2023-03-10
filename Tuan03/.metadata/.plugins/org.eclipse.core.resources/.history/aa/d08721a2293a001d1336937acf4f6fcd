@@ -1,0 +1,67 @@
+package bai06;
+import java.util.Scanner;
+
+public class Test {
+	static Scanner sc = new Scanner(System.in);
+	static void nhapXe(ThongTinDangKiXe xe){
+		System.out.print("Nhập tên chủ xe: ");
+		xe.setTenChuXe(sc.nextLine());
+
+		System.out.print("Nhập loại xe: ");
+		xe.setLoaiXe(sc.nextLine());
+
+		System.out.print("Nhập dung tích xe: ");
+		xe.setDungTich(sc.nextInt());
+
+		System.out.print("Nhập trị giá xe: ");
+		xe.setTriGia(sc.nextFloat());;sc.nextLine();
+	}
+	public static void main(String[] args) {
+		int n=1;
+		ThongTinDangKiXe listxe[] = new ThongTinDangKiXe[n];
+		ThongTinDangKiXe xe1 = new ThongTinDangKiXe("Nguyen Thu Loan","Future Neo", 100, 35000000);
+		ThongTinDangKiXe xe2 = new ThongTinDangKiXe("Le Minh Tinh","Landscape", 3000, 250000000);
+		ThongTinDangKiXe xe3=new ThongTinDangKiXe("Nguyen Minh Triet", "Landscape", 1500, 1000000000);
+
+//		listxe[1] = xe1;
+//		listxe[2] = xe2;
+		//				System.out.println(String.format("%-20s %-20s %15s %15s %15s","Tên Chủ Xe","Loại Xe","Dung Tích", "Trị Giá", "Thuế Phải Nộp"));
+		//				System.out.println("=========================================================================================");
+		//		System.out.println(listxe[1].toString());
+		//		System.out.println(listxe[2].toString());
+		//			}
+		int chon = 0;
+		do {
+			chon = menu();
+			switch (chon) {
+			case 1:
+				System.out.print("Nhập số lượng xe bạn muốn khai báo thuế: ");
+				n=sc.nextInt();sc.nextLine();
+
+				for (int i = 0; i < n; i++) {
+					System.out.println("Xe thứ " + (i+1));
+					listxe[i] = new ThongTinDangKiXe();
+					nhapXe(listxe[i]);
+				}
+				break;
+			case 2:
+				System.out.printf(String.format("%-20s %-20s %15s %15s %15s  \n","Chủ xe","Loại Xe","Dung tích","Trị giá","Thuế"));
+				for (int i = 0; i < n; i++) {
+					listxe[i].inThue();
+				}
+				break;
+			}
+
+		}while(chon != 3);
+
+	}
+
+	public static int menu() {
+		System.out.println("Vui lòng chọn chức năng!!!");
+		System.out.println("1.Nhập thông tin Xe");
+		System.out.println("2.Xuất thông tin Xe");
+		System.out.println("3.Thoát");
+
+		return sc.nextInt();
+	}
+}
